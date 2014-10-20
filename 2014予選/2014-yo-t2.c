@@ -4,7 +4,7 @@ int main(){
 	int M;	//委員の数
 	int A[1000+5];	//必要な費用
 	int B[1000+5];	//審査基準
-	int total[1000+5];	//各競技の投票の合計
+	int count[1000+5];	//各競技の投票の合計
 	int max=0;	//最大
 	int ans;	//最大の競技の番号
 	int i,j;
@@ -29,23 +29,23 @@ int main(){
 
 	//処理
 
-	//total[]の初期化
+	//count[]の初期化
 	for(i=1; i<=N; i++){
-		total[i]=0;
+		count[i]=0;
 	}
 	for(i=1; i<=M; i++){	//審査員i
 		for(j=1; j<N; j++){	//競技j
 			if(A[j]<=B[i]){	//費用が基準以下だったら
-				total[j]++;
+				count[j]++;
 				break;
 			}
 		}
 	}
 
-	//totalの最大を求める
+	//countの最大を求める
 	for(i=1; i<=N; i++){
-		if(max<total[i]){
-			max=total[i];
+		if(max<count[i]){
+			max=count[i];
 			ans=i;
 		}
 	}
