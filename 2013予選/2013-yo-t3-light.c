@@ -17,7 +17,7 @@ int main(){
 
 	// データ取得
 	scanf("%d", &N);
-	scanf("%s", &board);	
+	scanf("%s", board);	
 
 	// 処理
 	// 店の名前の長さ
