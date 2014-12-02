@@ -17,7 +17,7 @@ int main(){
 
 	// データ取得
 	scanf("%d", &N);
-	scanf("%s", &board);	
+	scanf("%s", board);	
 
 	// データ確認
 	printf("N:%d\n", N);
