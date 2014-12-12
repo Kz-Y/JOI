@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main(){
-	int sum=0;	// ‡Œv
+	int sum=0;	// åˆè¨ˆ
 	int time;
 	int i;
 	
