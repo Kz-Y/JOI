@@ -21,14 +21,6 @@ int main(){
 	for(i=0; i<N; i++){
 		scanf("%d %d %d", &A[i], &B[i], &C[i]);
 	}
-	// データ確認
-	/*printf("%d %d\n", D, N);
-	for(i=0; i<D; i++){
-		printf("%d\n", T[i]);
-	}
-	for(i=0; i<N; i++){
-		printf("%d %d %d\n", A[i], B[i], C[i]);
-	}*/
 
 	// 処理
 	// maxとminの初期化
