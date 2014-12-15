@@ -19,28 +19,21 @@ int main(){
 	scanf("%d", &N);
 	scanf("%s", board);	
 
-	// データ確認
-	printf("N:%d\n", N);
-	printf("board:%s\n", board);
-
 	// 処理
 	// 店の名前の長さ
 	size=strlen(board);
-	printf("size:%d\n", size);
 	for(i=0; i<N; i++){
 		// 古い看板取得
 		scanf("%s", old_boards);
-		printf("old_boards:%s\n", old_boards);
 		// 古い看板の文字数
 		old_size=strlen(old_boards);
-		printf("old_size:%d\n", old_size);
 		// char_count[][]の初期化(重なった:1,重ならない:0)
 		for(j=0; j<size; j++){
 			for(k=0; k<old_size; k++){
 				char_count[j][k]=0;
 			}
 		}
-		// kankakuの初期化
+		// 使う関数の初期化
 		for(j=0; j<old_size; j++){
 			kankaku[j]=0;
 		}
@@ -50,37 +43,29 @@ int main(){
 				if(board[j]==old_boards[k]){
 					char_count[j][k]=1;
 				}
-				printf("%d ", char_count[j][k]);
 			}
-			printf("\n");
 		}
 		// 等間隔で文字が並んでいるか
 		for(j=0; j<old_size; j++){
 			if(char_count[0][j]==1){
 				key=0;
 				for(k=1; k<size; k++){
-					printf("%d:", k);
 					if(k==1){	// 1回目だけ間隔を記録
 						for(l=0; l<old_size; l++){
 							if(j<l){
 								if(char_count[k][l]==1){
 									kankaku[key]=l-j;
-									printf("%d ", kankaku[key]);
 									key++;
 								}
 							}
 						}
-						printf("\n");
 					}else{
 						for(l=0; l<key; l++){
 							for(m=1; m<size; m++){
 								if((j+kankaku[l]*(m))<old_size){
-									printf("%d:", kankaku[l]);
-									printf("%d ", j+kankaku[l]*(m));
 									if(char_count[m][j+kankaku[l]*(m)]==1){
 										if(m==size-1){	// 最後まで行ったら
 											count[i]=1;
-											printf("XXX");
 											break;
 										}
 									}else{
@@ -89,7 +74,6 @@ int main(){
 								}
 							}
 						}
-						printf("\n");
 					}
 				}
 			}
@@ -100,8 +84,7 @@ int main(){
 	for(i=0; i<N; i++){
 		answer+=count[i];
 	}
-	printf("answer:%d", answer);
-
+	printf("%d\n", answer);
 
 	return 0;
 }
